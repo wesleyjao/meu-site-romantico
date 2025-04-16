@@ -1,59 +1,17 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #000;
+  background-color: #000; /* fundo preto */
   color: white;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100vh; /* fundo do tamanho exato da tela */
+  overflow: hidden; /* impede barra de rolagem com animação */
   position: relative;
-}
-
-/* Tela de entrada */
-#intro-screen {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  z-index: 2;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.intro-title {
-  font-size: 24px;
-  margin-bottom: 30px;
-  text-align: center;
-  padding: 0 20px;
-}
-
-/* 🔥 Botão Começar formatado 🔥 */
-#start-btn {
-  padding: 16px 36px;
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(145deg, #8B0000, #B22222);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 0 20px #ff4d4d, 0 0 40px #8B0000 inset;
-  transition: all 0.3s ease;
-  text-shadow: 1px 1px 2px black;
-  letter-spacing: 1px;
-}
-
-#start-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px #ff1a1a, 0 0 50px #8B0000 inset;
-}
-
-/* Corações */
 .heart {
   position: fixed;
   top: -50px;
@@ -72,10 +30,9 @@ body {
   }
 }
 
-/* Conteúdo principal */
 .container {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* conteúdo principal fica acima dos corações */
   max-width: 400px;
   width: 100%;
   text-align: center;
@@ -131,3 +88,4 @@ body {
 #audio-btn:hover {
   background-color: #14833b;
 }
+

@@ -7,57 +7,56 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+
+  <!-- Tela de introdução -->
+  <div id="intro-screen">
+    <h1 class="intro-title">Clique para começar</h1>
+    <button id="start-btn">Começar</button>
+  </div>  
+
+  <!-- Tela principal (escondida até clicar) -->
+  <div class="container" id="main-content" style="display: none;">
     <div class="carousel">
       <img src="imagens/IMG_20250320_112423_984.jpg" class="slide active" alt="Foto 1">
       <img src="imagens/IMG_20250320_112425_655.jpg" class="slide" alt="Foto 2">
       <img src="imagens/IMG_20250320_112430_057.jpg" class="slide" alt="Foto 3">
-      <img src="imagens/IMG_20250320_112439_702.jpg" class="slide" alt="Foto 3">
-      <img src="imagens/IMG_20250320_112441_439.jpg" class="slide" alt="Foto 3">
-      <img src="imagens/IMG_20250320_112443_185.jpg" class="slide" alt="Foto 3">
+      <img src="imagens/IMG_20250320_112439_702.jpg" class="slide" alt="Foto 4">
+      <img src="imagens/IMG_20250320_112441_439.jpg" class="slide" alt="Foto 5">
+      <img src="imagens/IMG_20250320_112443_185.jpg" class="slide" alt="Foto 6">
     </div>
 
-    <p class="frase">O tempo passou, mas o amor ficou,
-        nosso riso, nossa história, nada apagou.
-        
-        Sei que erramos, mas também sei sentir,
-        e o que mais quero é te ver sorrir.
-        
-        Se ainda há amor, por que não tentar?
+    <p class="frase">O tempo passou, mas o amor ficou,<br>
+        nosso riso, nossa história, nada apagou.<br><br>
+        Sei que erramos, mas também sei sentir,<br>
+        e o que mais quero é te ver sorrir.<br><br>
+        Se ainda há amor, por que não tentar?<br>
         Volta pra mim, deixa eu te amar. ❤️</p>
 
-        <audio id="audio" src="espelho.mp3" preload="auto" loop></audio>
-
     <button id="audio-btn">🔊 Pausar Música</button>
-
   </div>
 
+  <!-- Áudio separado (fora da tela principal) -->
+  <audio id="audio" src="espelho.mp3" preload="auto" loop></audio>
+
+  <!-- Scripts -->
   <script src="script.js"></script>
 
+  <!-- Corações animados -->
   <script>
     // Função para criar corações animados
     function criarCoracao() {
       const heart = document.createElement("div");
       heart.classList.add("heart");
       heart.textContent = "❤️";
-  
-      // Define posição horizontal aleatória
       heart.style.left = Math.random() * 100 + "vw";
       heart.style.fontSize = (Math.random() * 10 + 15) + "px";
       heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
-  
       document.body.appendChild(heart);
-  
-      // Remove o coração após cair
-      setTimeout(() => {
-        heart.remove();
-      }, 5000);
+      setTimeout(() => heart.remove(), 5000);
     }
-  
-    // Cria corações em intervalos
+
     setInterval(criarCoracao, 300);
   </script>
-  
+
 </body>
 </html>
-
